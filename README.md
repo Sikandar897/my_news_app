@@ -1,16 +1,12 @@
 # my_news_app
 
-A new Flutter project.
+This repository houses a Flutter MVVM project designed for retrieving and displaying News Headlines. The project seamlessly incorporates a REST API for News, ensuring efficient and up-to-date delivery of news content.
 
-## Getting Started
+# Api for News
+Get free api from here : https://newsapi.org/ 
 
-This project is a starting point for a Flutter application.
+## Special Thanks
 
-A few resources to get you started if this is your first Flutter project:
+A big shoutout and kudos to [Sir AxifTaj](https://github.com/axiftaj) for their valuable contributions to this project. 🚀
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Coming Soon..

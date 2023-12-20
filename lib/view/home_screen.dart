@@ -15,7 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   final format = DateFormat('MMM dd, yyyy');
   NewsViewMOdel newsViewMOdel = NewsViewMOdel();
   @override
@@ -124,13 +123,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                             const Spacer(),
                                             SizedBox(
-                                              width: width *0.7,
+                                              width: width * 0.7,
                                               child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
                                                 children: [
                                                   Text(
-                                                    snapshot.data!
-                                                        .articles![index].source!.name
+                                                    snapshot
+                                                        .data!
+                                                        .articles![index]
+                                                        .source!
+                                                        .name
                                                         .toString(),
                                                     maxLines: 2,
                                                     overflow:
@@ -140,8 +144,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         fontWeight:
                                                             FontWeight.w600),
                                                   ),
-                                                  Text( format.format(dateTime)
-                                                        ,
+                                                  Text(
+                                                    format.format(dateTime),
                                                     maxLines: 2,
                                                     overflow:
                                                         TextOverflow.ellipsis,

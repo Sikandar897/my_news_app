@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:my_news_app/models/categories_news_model.dart';
 import 'package:my_news_app/utils/const.dart';
+import 'package:my_news_app/view/news_details_screen.dart';
 import 'package:my_news_app/view_model/news_view_model.dart';
 
 class CategoriesScreen extends StatefulWidget {
@@ -98,21 +99,47 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                             padding: const EdgeInsets.only(bottom: 15),
                             child: Row(
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: CachedNetworkImage(
-                                    imageUrl: snapshot
+                                InkWell(
+                                  onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => NewsDetailsScreen(
+                                    newsImage: snapshot
                                         .data!.articles![index].urlToImage
                                         .toString(),
-                                    fit: BoxFit.cover,
-                                    height: height * .18,
-                                    width: width * .3,
-                                    placeholder: (context, url) =>
-                                        Container(child: spinkit2),
-                                    errorWidget: (context, url, error) =>
-                                        const Icon(
-                                      Icons.error_outline,
-                                      color: Colors.red,
+                                    newsTitle: snapshot.data!.articles![index].title
+                                        .toString(),
+                                    newsDate: snapshot
+                                        .data!.articles![index].publishedAt
+                                        .toString(),
+                                    author: snapshot.data!.articles![index].author
+                                        .toString(),
+                                    description: snapshot
+                                        .data!.articles![index].description
+                                        .toString(),
+                                    content: snapshot.data!.articles![index].content
+                                        .toString(),
+                                    source: snapshot.data!.articles![index].source!.name
+                                        .toString()),
+                              ));
+                        },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(15),
+                                    child: CachedNetworkImage(
+                                      imageUrl: snapshot
+                                          .data!.articles![index].urlToImage
+                                          .toString(),
+                                      fit: BoxFit.cover,
+                                      height: height * .18,
+                                      width: width * .3,
+                                      placeholder: (context, url) =>
+                                          Container(child: spinkit2),
+                                      errorWidget: (context, url, error) =>
+                                          const Icon(
+                                        Icons.error_outline,
+                                        color: Colors.red,
+                                      ),
                                     ),
                                   ),
                                 ),

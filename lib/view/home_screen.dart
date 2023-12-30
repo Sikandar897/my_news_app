@@ -281,21 +281,47 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.only(bottom: 15),
                           child: Row(
                             children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(15),
-                                child: CachedNetworkImage(
-                                  imageUrl: snapshot
-                                      .data!.articles![index].urlToImage
-                                      .toString(),
-                                  fit: BoxFit.cover,
-                                  height: height * .18,
-                                  width: width * .3,
-                                  placeholder: (context, url) =>
-                                      Container(child: spinkit2),
-                                  errorWidget: (context, url, error) =>
-                                      const Icon(
-                                    Icons.error_outline,
-                                    color: Colors.red,
+                              InkWell(
+                                onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => NewsDetailsScreen(
+                                    newsImage: snapshot
+                                        .data!.articles![index].urlToImage
+                                        .toString(),
+                                    newsTitle: snapshot.data!.articles![index].title
+                                        .toString(),
+                                    newsDate: snapshot
+                                        .data!.articles![index].publishedAt
+                                        .toString(),
+                                    author: snapshot.data!.articles![index].author
+                                        .toString(),
+                                    description: snapshot
+                                        .data!.articles![index].description
+                                        .toString(),
+                                    content: snapshot.data!.articles![index].content
+                                        .toString(),
+                                    source: snapshot.data!.articles![index].source!.name
+                                        .toString()),
+                              ));
+                        },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: CachedNetworkImage(
+                                    imageUrl: snapshot
+                                        .data!.articles![index].urlToImage
+                                        .toString(),
+                                    fit: BoxFit.cover,
+                                    height: height * .18,
+                                    width: width * .3,
+                                    placeholder: (context, url) =>
+                                        Container(child: spinkit2),
+                                    errorWidget: (context, url, error) =>
+                                        const Icon(
+                                      Icons.error_outline,
+                                      color: Colors.red,
+                                    ),
                                   ),
                                 ),
                               ),

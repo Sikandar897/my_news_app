@@ -1,4 +1,5 @@
 # My News App
+![my news app](https://drive.google.com/uc?export=view&id=1g9mPQ69Tsy7BZR1gewmppLbzdWG2AC3F)
 
 My News App is a Flutter project built on the MVVM architecture, offering a sleek and responsive user interface to fetch and display news headlines from various reliable sources such as Al Jazeera, ARY News, BBC, CNN, and more. This app utilizes a REST API to provide real-time news updates.
 
